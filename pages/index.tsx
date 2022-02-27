@@ -147,14 +147,18 @@ const Home: NextPage<LandingProps> = ({
             </TextParagraphLarge>
             <section>
               <Button color="#f7f7f7">
+                <a href="#our services">
                 <TextParagraphLarge>
                   {PRISMIC_button_text(header.items[0])}
                 </TextParagraphLarge>
+                </a>
               </Button>
               <Button color="#4784B0" background="#f5">
+                <a href="#contact us">
                 <TextParagraphLarge>
                   {PRISMIC_button_text(header.items[1])}
                 </TextParagraphLarge>
+                </a>
               </Button>
             </section>
           </Hero>
