@@ -133,7 +133,9 @@ const Home: NextPage<LandingProps> = ({
                 href={`#${String(PRISMIC_link_text(each)).toLowerCase()}`}
                 key={Math.random() + index}
               >
+                <TextParagraphSmall>
                 {PRISMIC_link_text(each)}
+                </TextParagraphSmall>
               </a>
             ))}
           </section>

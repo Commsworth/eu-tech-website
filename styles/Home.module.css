@@ -23,8 +23,17 @@
 .main h6,
 .main p,
 .main a,
-.main button {
-  font-family: "Nunito", "sans-serif";
+.main button,
+.container footer button,
+.container footer h1,
+.container footer h2,
+.container footer h3,
+.container footer h4,
+.container footer h5,
+.container footer h6,
+.container footer p,
+.container footer a {
+  font-family: "Nunito", "sans-serif" !important;
 }
 @media (max-width: 600px) {
   .grid {

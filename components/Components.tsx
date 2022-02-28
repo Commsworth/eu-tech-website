@@ -29,14 +29,16 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  z-index:100;
   top: 0px;
   min-height: 80px;
   width: 100%;
   padding: 0rem 2rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   @media (max-width:768px) {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
     gap:24px;
     padding: 1rem 2rem;
   }
@@ -50,6 +52,7 @@ export const HeaderDiv = styled.div`
   /* background: red; */
   display: grid;
   place-items: center;
+  padding: 0px 5%;
   section {
     max-width: 850px;
     width: 100%;
@@ -72,7 +75,8 @@ background-position:center;
 export const AboutUsDiv = styled.div`
   width: 100%;
   /* height: 100%; */
-  padding: 35px 0px;
+  padding:35px 5%;
+  /* padding: 35px 0px; */
   /* margin: 17.5px 0px; */
   display: inline-flex;
   justify-content: center;
@@ -80,7 +84,7 @@ export const AboutUsDiv = styled.div`
   gap: 35px;
   /* width:max-content; */
   section {
-    max-width: 400px;
+    max-width: 350px;
   }
   /* width: max-content; */
   @media (max-width: 768px) {
@@ -108,12 +112,13 @@ export const AboutUsDiv = styled.div`
     }
     /* align-items:right; */
   }
-`;
+  `;
 export const ServicesDiv = styled.div`
   width: 100%;
   height: 100%;
   /* margin: 17.5px 0px; */
-  padding: 70px 0px;
+  padding:70px 5%;
+  /* padding: 70px 0px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,7 +141,7 @@ export const ServicesDiv = styled.div`
       color: #fff;
     }
     section {
-      max-width: 400px;
+      max-width: 350px;
     }
   }
 `;
@@ -144,6 +149,7 @@ export const DividingLine = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.5);
   max-width: 1000px !important;
   width: 80% !important;
+  /* margin: 16px 0px; */
 `;
 export const PartnerDiv = styled.div`
   width: 100%;
@@ -153,13 +159,12 @@ export const PartnerDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-
+  /* gap: 16px; */
   & > section {
     display: flex;
     gap: 24px;
     justify-content: center;
-    padding: 35px 0px;
+    padding: 35px 5%;
     @media (max-width: 1024px) {
       display: grid;
       max-width: 90%;
@@ -178,32 +183,36 @@ export const PartnerDiv = styled.div`
       }
     }
   }
-  div {
+  &>div {
     width: 100%;
     display: flex;
     justify-content: space-between;
     max-width: 1400px;
+    padding:0% 5%;
+    @media (min-width: 1025px) {
+    transform:scale(0.8);
+    }
 
     section {
-      max-width: 630px;
+      max-width: 500px;
       flex-wrap: wrap;
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 16px;
       div {
         img {
-          width: 220px;
-          height: 100px;
+          width: 150px;
+          height: 70px;
         }
         width: fit-content;
-        padding: 20px;
+        padding: 15px 20px;
         display: flex;
         justify-content: center;
 
         background: #fff;
         border-radius: 32.66px;
       }
-      @media (max-width: 1024px) {
+      @media (max-width: 768px) {
         max-width: 300px;
         div {
           img {
@@ -216,9 +225,11 @@ export const PartnerDiv = styled.div`
   }
   h2 {
     @media (max-width: 1024px) {
-      max-width: 300px;
+      max-width: 600px;
+      width: 70%;
     }
     max-width: 600px;
+    width: 40%;
     text-align: center;
   }
 `;
@@ -239,7 +250,7 @@ export const ContactDiv = styled.footer`
     /* align-items:right; */
   }
   button {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
   p,
   h2 {
@@ -332,7 +343,7 @@ export const Hero = styled.section`
 `;
 
 export const TextHeader1 = styled.h1`
-  font-size: 61px;
+  font-size: 2.488rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -341,11 +352,11 @@ export const TextHeader1 = styled.h1`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 47px;
+    font-size: 2.074rem;
   }
 `;
 export const TextHeader2 = styled.h2`
-  font-size: 47px;
+  font-size: 2.074rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -354,11 +365,11 @@ export const TextHeader2 = styled.h2`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: 1.728rem;
   }
 `;
 export const TextHeader3 = styled.h3`
-  font-size: 36px;
+  font-size: 1.728rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -367,11 +378,11 @@ export const TextHeader3 = styled.h3`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 27px;
+    font-size: 1.44rem;
   }
 `;
 export const TextHeader4 = styled.h4`
-  font-size: 27px;
+  font-size: 1.44rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -380,11 +391,11 @@ export const TextHeader4 = styled.h4`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 21px;
+    font-size: 1.2rem;
   }
 `;
 export const TextParagraphLarge = styled.p`
-  font-size: 21px;
+  font-size: 1.2rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -393,11 +404,11 @@ export const TextParagraphLarge = styled.p`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
 export const TextParagraphSmall = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0px;
   ${({ center }: { center?: boolean }) =>
     center &&
@@ -406,12 +417,12 @@ export const TextParagraphSmall = styled.p`
       text-align: center;
     `}
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 0.833rem;
   }
 `;
 
 export const Button = styled.button`
-  padding: 15px 30px;
+  padding: 15px 25px;
   box-shadow: 3.32203px 6.64407px 5.81356px rgba(255, 255, 255, 0.1);
   outline: #4784b0;
   border: 0px;
@@ -425,7 +436,7 @@ export const Button = styled.button`
       background: ${background ?? "#4784b0"};
     `}
   @media (max-width: 768px) {
-    padding: 12.5px 25px;
+    padding: 12.5px 20px;
     /* font-size: 14px; */
   }
 `;
