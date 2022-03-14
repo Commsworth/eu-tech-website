@@ -1,5 +1,15 @@
 import styled, { css } from "styled-components";
 
+export const NavbarContainer = styled.div`
+background: #f0f1fb;
+padding: 0rem 2rem;
+border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+width: 100%;
+position: fixed;
+  z-index:100;
+  top: 0px;
+  min-height: 80px;
+`
 export const Navbar = styled.nav`
   img {
     object-fit: cover;
@@ -25,17 +35,12 @@ export const Navbar = styled.nav`
     border:none;
     margin:5px;
   }
-  background: #f0f1fb;
+  max-width:1440px;
+  margin:auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  z-index:100;
-  top: 0px;
-  min-height: 80px;
   width: 100%;
-  padding: 0rem 2rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   @media (max-width:768px) {
     flex-direction:column;
     align-items:center;

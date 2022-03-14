@@ -33,6 +33,7 @@ import {
   HeaderDiv,
   Hero,
   Navbar,
+  NavbarContainer,
   PartnerDiv,
   ServicesDiv,
   TextHeader1,
@@ -70,7 +71,7 @@ const Home: NextPage<LandingProps> = ({
   const [dropdown,setDropdown] = useState<boolean>(false);
   return (
     <div className={styles.container}>
-      {console.log(footer)}
+      {/* {console.log(footer)} */}
       <Head>
         <title>Eu Tech</title>
         <meta name="description" content="A next-gen tech solutions company" />
@@ -88,6 +89,7 @@ const Home: NextPage<LandingProps> = ({
       </Head>
 
       <main className={styles.main}>
+        <NavbarContainer>
         <Navbar>
           <Link href="/">
             <a>
@@ -140,6 +142,7 @@ const Home: NextPage<LandingProps> = ({
             ))}
           </section>
         </Navbar>
+        </NavbarContainer>
 
         <HeaderDiv background={PRISMIC_background(header.primary)}>
           <Hero gap="24px">
