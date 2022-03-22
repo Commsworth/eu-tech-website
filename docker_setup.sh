@@ -3,7 +3,7 @@
 # PORT=$(sed -n "s/^PORT=//p" /home/credicity-uat/credicityuat/frontend-fhf_private-uat-develop/.env) 
 
 
-sudo docker build --tag commsworthdevops/eutech:$1 /home/eutech/eutech-home/eu-tech-website-pipeline
+sudo docker build --tag commsworthdevops/eutech:$1 /home/eutech/eutech-home/eu-tech-website_prod-pipeline 
 
 if [ $? -eq 0 ]; then
    echo Deploy Services
