@@ -36,7 +36,7 @@ agent any
 
             sh('cat .env | tr -d " \t\r" >/dev/null')
 
-            sh("sudo ansible-playbook /var/lib/jenkins/eutech-pipeline-playbook.yaml -i /etc/ansible/inventory -v --tags prod --extra-vars 'TAG=${env.BUILD_ID} DOCKER_PWD=${DOCKER_PRISMIC_PSW} DOCKER_USR=${DOCKER_PRISMIC_USR}'")
+            sh("sudo ansible-playbook /var/lib/jenkins/eutech-pipeline-playbook.yaml -i /etc/ansible/inventory -v --tags prod --extra-vars 'TAG=${env.BUILD_ID} DOCKER_PRISMIC_PSW=${DOCKER_PRISMIC_PSW} DOCKER_PRISMIC_USR=${DOCKER_PRISMIC_USR}'")
 
 
             sh "ls ${JENKINS_HOME}/workspace | xargs rm -rf"
