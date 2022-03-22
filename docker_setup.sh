@@ -12,7 +12,8 @@ if [ $? -eq 0 ]; then
    # sudo docker service update --image 127.0.0.1:5000/credicity_mortgage_frontend_admin:$1 credicity_mortgage_frontend_admin
    
    if [ $? -eq 0 ]; then
-   echo "Y" | docker system prune -a
+   docker image prune -a --force --filter "until=240h"
+#    echo "Y" | docker system prune -a
    echo Updated Services Successfully
    sudo docker service update --image commsworthdevops/eutech:$1 eutech
 
