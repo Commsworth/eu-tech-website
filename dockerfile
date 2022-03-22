@@ -1,28 +1,27 @@
+FROM node:alpine as builder
 
-FROM node:10-alpine as builder
+#set working directory
+RUN mkdir -p /var/www/app/eutech
+WORKDIR /var/www/app/eutech
 
-# ARG BASE_URL
-# ARG PORT
+#copy package.json to working dir to prevent reinstallation
+#of npm packages 
+# COPY ./package.json ./
 
-# ENV BASE_URL=${BASE_URL}
-# ENV PORT=${PORT}
 
-# copy the package.json to install dependencies
-COPY package.json package-lock.json ./
 
-# Install the dependencies and make the folder
-RUN npm install && mkdir /nextjs-ui && mv ./node_modules ./nextjs-ui
+#copy the project into the working dir
+COPY . /var/www/app/eutech
 
-WORKDIR /nextjs-ui
+RUN ls /var/www/app/eutech
 
-COPY . .
 
-# Build the project and copy the files
+#run package installations
+RUN npm install --legacy-peer-deps
+
+
 RUN npm run build
-
 
 EXPOSE 3000
 
 CMD ["npm","start"]
-
-
